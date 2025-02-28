@@ -9,7 +9,7 @@ class Student extends Model
 {
  protected  $fillable = ['name', 'email', 'phone', 'dob', 'college_id'];
 
-    public function college(): belongsTo
+    public function college(): BelongsTo
     {
         return $this->belongsTo(College::class);
     }

@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\hasmany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class College extends Model
 {
     protected $fillable = ['name', 'address'];
 
-    public function student(): hasMany
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class);
     }
