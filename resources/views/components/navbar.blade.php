@@ -8,7 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::is('colleges.index') ? 'active' : '' }}" href="{{ route('colleges.index') }}">College</a>
+                    <a class="nav-link {{ Route::is('colleges.index') ? 'active' : '' }}" href="{{ route('colleges.index') }}">Colleges</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::is('students.index') ? 'active' : '' }}" href="{{ route('students.index') }}">Students</a>
                 </li>
             </ul>
         </div>
