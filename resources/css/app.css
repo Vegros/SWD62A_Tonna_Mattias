@@ -1,5 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 body{
     background: linear-gradient(90deg, rgba(88, 28, 135), rgb(21, 21, 21));

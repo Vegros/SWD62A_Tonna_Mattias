@@ -7,6 +7,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::is('colleges.index') ? 'active' : '' }}" href="{{ route('colleges.index') }}">College</a>
+                </li>
             </ul>
         </div>
     </div>
