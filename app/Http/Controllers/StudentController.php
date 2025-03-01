@@ -10,8 +10,19 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $students = Student::all();
-        return view('student.index', compact('students'));
+        $colleges = College::orderBy('name','asc')->pluck('name', 'id')->prepend('Select College', '');
+        $students = Student::query();
+
+        if (request('college_id') != null){
+            $students = $students->where('college_id', request('college_id'));
+        }
+
+        if (request('sort') != null){
+            $students = $students->orderBy('name', request('sort'));
+        }
+        $students = $students->get();
+
+        return view('student.index', compact('students', 'colleges'));
 
     }
 

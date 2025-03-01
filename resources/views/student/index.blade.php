@@ -7,6 +7,7 @@
                 <h2>Students</h2>
                 <a href="{{ route('students.create') }}" class="btn btn-primary">Add New</a>
             </div>
+            @include('components._filter-sort')
             @if(session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
