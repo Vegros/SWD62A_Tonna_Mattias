@@ -20,7 +20,7 @@ class CollegeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
+            'name' => 'required|string|unique:colleges',
             'address' => 'required|string'
         ]);
         College::create($request->all());
@@ -49,7 +49,7 @@ class CollegeController extends Controller
             return redirect()->route('colleges.index')->with('error', 'College not found!');
         }
         $request->validate([
-            'name' => 'required|string',
+            'name' => 'required|string|unique:colleges,name,'.$id,
             'address' => 'required|string'
         ]);
         $college->update($request->all());
