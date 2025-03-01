@@ -19,23 +19,6 @@
 </nav>
 
 <style>
-
-    .text-format{
-        cursor: default;
-        min-width: fit-content !important;
-        width: fit-content !important;
-        max-width: 10rem !important;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        color: #9a9696;
-        font-weight: bolder;
-        font-style: italic;
-    }
-    .text-format:hover{
-        color: #9a9696;
-    }
-
     .nav-link.active {
         font-weight: bold;
         color: yellow !important;
@@ -49,7 +32,6 @@
         font-weight: bold;
         z-index: 1000;
     }
-
 
     li.nav-item {
         display: flex;

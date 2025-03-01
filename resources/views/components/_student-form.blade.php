@@ -73,6 +73,7 @@
         font-weight: bold;
         color: #ccc;
         text-align: left;
+        margin-bottom: 5px;
         width: 100%;
     }
 
