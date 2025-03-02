@@ -82,10 +82,6 @@ cd SWD62A_Tonna_Mattias
 composer install
 ```
 
-``` bash
-npm install 
-```
-
 ```bash 
 npm install && npm run build
 ```
