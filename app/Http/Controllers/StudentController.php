@@ -20,6 +20,10 @@ class StudentController extends Controller
         if (request('sort') != null){
             $students = $students->orderBy('name', request('sort'));
         }
+        else{
+            $students = $students->orderBy('id', 'asc');
+        }
+
         $students = $students->get();
 
         return view('student.index', compact('students', 'colleges'));
