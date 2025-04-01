@@ -47,7 +47,7 @@ class StudentController extends Controller
         //validate request then create a new student in database
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:students|String',
+            'email' => 'required|email|unique:students|String|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'phone' => 'required|string|max:8',
             'dob' => 'required|date',
             'college_id' => 'required|exists:colleges,id'
@@ -91,7 +91,7 @@ class StudentController extends Controller
         }
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:students,email,' . $id,
+            'email' => 'required|email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/|unique:students,email,' . $id,
             'phone' => 'required|string|max:8',
             'dob' => 'required|date',
             'college_id' => 'required|exists:colleges,id'
