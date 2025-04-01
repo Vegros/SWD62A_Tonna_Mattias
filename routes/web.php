@@ -4,6 +4,7 @@ use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
+//the root of the project
 Route::get('/', function () {
     return view('home/index');
 })->name('home');
@@ -27,3 +28,8 @@ Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('stu
 Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
 Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
 
+
+//fallback to home if route does not exist
+Route::fallback(function () {
+    return redirect()->route('home');
+});

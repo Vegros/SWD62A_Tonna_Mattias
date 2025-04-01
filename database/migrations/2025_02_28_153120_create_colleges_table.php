@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('colleges', function (Blueprint $table) {
             $table->id();
+            //name of college is unique in the table colleges
             $table->string('name')->unique();
             $table->string('address');
             $table->timestamps();

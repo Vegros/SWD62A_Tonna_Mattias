@@ -9,16 +9,19 @@ class CollegeController extends Controller
 {
     public function index()
     {
+        // get all colleges
         $colleges = College::all();
         return view('college.index', compact('colleges'));
     }
     public function create()
     {
+        //return the create college view
         $college = new College();
         return view('college.create', compact('college'));
     }
     public function store(Request $request)
     {
+        //validate the request, then create a new college
         $request->validate([
             'name' => 'required|string|unique:colleges',
             'address' => 'required|string'
@@ -28,6 +31,7 @@ class CollegeController extends Controller
     }
     public function show($id)
     {
+        //return the show individual college view by using finding the id in the database
         $college = College::find($id);
         if($college == null){
             return redirect()->route('colleges.index')->with('error', 'College not found!');
@@ -36,6 +40,7 @@ class CollegeController extends Controller
     }
     public function edit($id)
     {
+        //returns the edit college view
         $college = College::find($id);
         if($college == null){
             return redirect()->route('colleges.index')->with('error', 'College not found!');
@@ -44,10 +49,13 @@ class CollegeController extends Controller
     }
     public function update(Request $request, $id)
     {
+
         $college = College::find($id);
         if($college == null){
+            // if college is not found redirect to index page
             return redirect()->route('colleges.index')->with('error', 'College not found!');
         }
+        //validate the request and then update the college
         $request->validate([
             'name' => 'required|string|unique:colleges,name,'.$id,
             'address' => 'required|string'
@@ -57,6 +65,7 @@ class CollegeController extends Controller
     }
     public function destroy($id)
     {
+        //find the college by id and then if college exists, delete from database
         $college = College::find($id);
         if($college == null){
             return redirect()->route('colleges.index')->with('error', 'College not found!');
